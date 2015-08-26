@@ -20,6 +20,16 @@
 							- if user_signed_in?
 								= link_to "Edit", edit_pin_path, class: "btn btn-default"
 								= link_to "Delete", pin_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default"
+					.col-md-6
+						#comments
+							%h3= @comments.count
+							comments
+							= @comments.each do |comment|
+								.comment.clearfix
+									.comment_content
+										%p.comment_name= comment.name
+										%p.comment_body= comment.body
+							
 							
 							
 / #pin_show.row
