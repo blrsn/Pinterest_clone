@@ -115,3 +115,74 @@ nav {
 textarea {
 	min-height: 250px;
 }
+#comments {
+	h3{
+    margin: 1.5em 0 0.5em 0;
+    border-bottom: 1px solid #d6dce0;
+    padding-bottom: 0.2em;
+	}
+	.comment{
+		
+    border-bottom: 1px solid #d6dce0;
+    padding: 0.6em 0em;
+	}
+	.comment_content {
+			margin-left: 2.3em;
+			margin-top: 0.5em;
+			margin-bottom: 0.8em;
+			.comment_name{
+				color: #e74c3c;
+				font-size: 1.2em;
+				margin-bottom: 0em;
+			}
+			.comment_body{
+				font-size: 17px;
+				margin-bottom: 0.6em;
+//				color: #6C7A89;
+			}
+			.comment_date{
+				font-size: 12px;
+				color: #7f8c8d;
+			}		
+	}
+}
+#comments_form{
+	.form-group{
+		.body-field{
+			min-height: 30px;
+		}
+	}
+	label{
+		margin-bottom: 0px;
+	}
+  input[type="text"], textarea {
+    width: 100%;
+    border: 1px solid #d6dce0;
+    border-radius: .35em;
+    margin-top: 10px;
+    padding: .3em .7em;
+    line-height: 1.75;
+  }
+  input[type="submit"] {
+    outline: none;
+		color: black;
+		background: transparent;
+    border: 1px solid #d6dce0;
+    padding: .5em 1.5em;
+    font-size: 1.1em;
+    border-radius: 1.5em;
+		margin-top: 0.6em;
+    # margin-left: .4em;
+	    &:hover {
+	      border: 1px solid #e74c3c;
+	      color: #e74c3c;
+	    }
+		}
+	 .form_head{
+		 
+		font-weight: 400;
+		font-size: 18px;
+		padding-top: 0.7em;
+		padding-bottom: 0.5em;
+	}	
+}

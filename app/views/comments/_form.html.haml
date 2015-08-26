@@ -1,12 +1,12 @@
-- form_for @comment do |f|
-	.form-field
-		f.label :name
-		f.text_field :name
+= form_for [@pin, @pin.comments.build] do |f|
+	.form-group
+		= f.label :name
+		= f.text_field :name,class: "name-field"
+
 		
-	.form-field
-		f.label :name
-		f.text_area :body
-		
-	.btn.btn-default
-		f.submit "Submit"
+	.form-group
+		= f.label :body
+		= f.text_area :body, class: "body-field"
+		%br
+		= f.submit "Submit", class: "btn btn-primary"
 		

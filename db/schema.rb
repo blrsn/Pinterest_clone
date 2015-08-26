@@ -16,9 +16,12 @@ ActiveRecord::Schema.define(version: 20150826201022) do
   create_table "comments", force: :cascade do |t|
     t.string   "name"
     t.text     "body"
+    t.integer  "pin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "comments", ["pin_id"], name: "index_comments_on_pin_id"
 
   create_table "pins", force: :cascade do |t|
     t.string   "title"
