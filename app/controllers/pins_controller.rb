@@ -1,5 +1,6 @@
 class PinsController < ApplicationController
-  before_action :find_pin , only: [:edit,:update,:show,:destroy]
+  before_action :find_pin , only: [:edit,:update,:show,:destroy, :upvote]
+  before_action :authenticate_user!, except: [:index,:show]
   
   def show
   end
@@ -41,6 +42,16 @@ class PinsController < ApplicationController
     flash[:success] = "Pin deleted Successfully"
   end
   
+  def upvote
+    @pin.upvote_by current_user
+    redirect_to :back
+  end
+  
+  def downvote
+    @pin.downvote_by current_user
+    redirect_to :back
+  end
+  
   private
     def find_pin
       @pin = Pin.find(params[:id])
@@ -49,5 +60,6 @@ class PinsController < ApplicationController
     def pin_params
       params.require(:pin).permit(:title,:description,:image)
     end
+    
   
 end
